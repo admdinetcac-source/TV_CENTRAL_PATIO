@@ -97,13 +97,13 @@
   const iframe = document.getElementById("visor");
   const keepAlive = document.getElementById("keepAlive");
 
-  let index_Siderperu = 0;
+  let siderperu = 0;
 
   function cambiarPagina() {
 
     iframe.src = links[siderperu];
 
-    console.log("Mostrando link:", siderperu.);
+    console.log("Mostrando link:", siderperu);
 
     siderperu =
       (siderperu + 1) % links.length;
