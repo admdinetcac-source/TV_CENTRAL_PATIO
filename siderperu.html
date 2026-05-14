@@ -6,14 +6,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <style>
+
     html, body {
       margin: 0;
       height: 100%;
       background: black;
       overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
     /* ===== CONTENEDOR GENERAL ===== */
+
     .contenedor {
       display: flex;
       flex-direction: column;
@@ -21,26 +24,46 @@
       height: 100%;
     }
 
-    /* ===== VIDEO ===== */
+    /* ===== CABECERA ===== */
+
     .zona-video {
       width: 100%;
       height: 15%;
       background: #072040;
+
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+
+      padding: 0 25px;
+      gap: 30px;
+
+      box-sizing: border-box;
     }
 
+    /* ===== VIDEO / LOGO ===== */
+
     .zona-video video {
-      height: 100%;
+      height: 90%;
       width: auto;
       object-fit: contain;
     }
 
-    /* ===== POWER BI ===== */
+    /* ===== TITULO ===== */
+
+    .titulo-tv {
+      color: white;
+      font-size: 38px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    /* ===== POWER BI / GOOGLE SHEETS ===== */
+
     .zona-web {
       width: 100%;
       height: 85%;
+      background: white;
     }
 
     iframe {
@@ -50,7 +73,8 @@
       display: block;
     }
 
-    /* pixel invisible para evitar standby */
+    /* ===== PIXEL INVISIBLE ===== */
+
     #keepAlive {
       position: fixed;
       width: 1px;
@@ -59,6 +83,7 @@
       top: 0;
       left: 0;
     }
+
   </style>
 </head>
 
@@ -66,20 +91,29 @@
 
 <div class="contenedor">
 
-  <!-- VIDEO EN LOOP -->
+  <!-- CABECERA -->
   <div class="zona-video">
+
+    <!-- VIDEO / LOGO -->
     <video autoplay muted loop playsinline>
       <source src="VIDEO_TV.mp4" type="video/mp4">
     </video>
+
+    <!-- TITULO -->
+    <div class="titulo-tv">
+      ESTATUS OPERATIVO SIDER PERU - DINET
+    </div>
+
   </div>
 
-  <!-- POWER BI -->
+  <!-- GOOGLE SHEETS -->
   <div class="zona-web">
     <iframe id="visor"></iframe>
   </div>
 
 </div>
 
+<!-- PIXEL INVISIBLE -->
 <div id="keepAlive"></div>
 
 <script>
@@ -139,3 +173,6 @@
   }, INTERVALO_SEGUNDOS * 1000);
 
 </script>
+
+</body>
+</html>
